@@ -1,90 +1,64 @@
 # Content Strategy Multi-Agent Framework
 
-This is a multi-agent system for creating, reviewing, and improving educational content.
+A collaborative AI framework for creating high-quality educational content using specialized agent personas.
 
-Inspired by [Brain: A Multi-Agent Framework by Ali Afshar](https://github.com/aliafshar/brain).
+> I cannot provide the pedagogical framework and content structure because they are not mine to share.
 
 ## Quick Start
 
-To use the framework, provide a prompt with one of these triggers:
+1. **Set up context files** (required):
+   - `content_agents.md` - Agent personas and responsibilities
+   - `pedagogical_framework.md` - Educational principles and standards
+   - `lesson_template.md` - Content structure template
+   - `GEMINI.md` - Framework documentation
 
-```bash
-# Create new educational content
-@gemini-multi-agent "CONTENT GOAL: Create a new class on JavaScript variables for beginner web developers"
+2. **Start a content run** with one of these triggers:
+   ```
+   CONTENT GOAL: Create a learning module on [topic]
+   CONTENT REVIEW: Evaluate and improve existing [content]
+   CONTENT SUPPORT: Develop supporting materials for [content]
+   ```
 
-# Review and analyze existing content  
-@gemini-multi-agent "CONTENT REVIEW: Evaluate my existing lesson on CSS Grid for pedagogy alignment and engagement"
-
-# Generate supporting materials
-@gemini-multi-agent "CONTENT SUPPORT: Create mentor facilitation guide for Project A with discussion prompts"
-```
-
-## Required Files
-
-Ensure these context files are present in `gemini-multi-agent` at the root of your project directory.
-
-```
-├── GEMINI.md                    # This framework (current file)
-├── content_agents.md            # Agent personas and responsibilities  
-├── pedagogical_framework.md     # Pedagogical framework and educational standards
-├── lesson_template.md           # Mandatory lesson structure template
-└── content_runs/                # Generated content directory
-```
-
-## Use Cases
-
-### 1. Content Creation (`CONTENT GOAL:`)
-Creates new educational content following pedagogical framework and lesson template.
-
-**Workflow:** Strategy → Research → Planning → Writing → QA → Approval  
-**Output:** Complete lesson with proper pedagogy mapping and learning objectives.
-
-### 2. Content Review (`CONTENT REVIEW:`)
-Analyzes existing content without modifying original files.
-
-**Workflow:** Analysis → Audit → Assessment → Recommendations  
-**Output:** Quality reports, improvement roadmaps, benchmarking analysis
-
-### 3. Supporting Materials (`CONTENT SUPPORT:`)
-Generates lesson plans, instructor guides, assessments, and learner resources.
-
-**Workflow:** Requirements → Research → Design → Creation → Integration Testing  
-**Output:** Complete instructional packages ready for classroom use
-
-## Agent Team
-
-### Leadership
-- **ContentDirector**: Strategic vision and audience alignment
-- **LearningExperienceDesigner**: Educational workflow and learning architecture
-- **PedagogyExpert**: Pedagogical framework implementation and learning objective design
-
-### Content Creation
-- **SeniorTechnicalWriter**: Primary content creation using lesson template
-- **JuniorTechnicalWriter**: Content editing, formatting, and template compliance
-- **InstructionalDesigner**: Lesson plans and supporting material creation
-
-### Quality & Research
-- **SeniorResearcher**: Strategic research and source validation
-- **JuniorResearcher**: Content research and example gathering
-- **QualityAssuranceSpecialist**: Framework compliance and learning effectiveness
-- **ContentEvaluationSpecialist**: Existing content analysis and improvement recommendations
+3. **Agents collaborate** through 6 workflow stages:
+   - Strategy & Learning Design
+   - Research & Content Foundation  
+   - Content Planning
+   - Content Creation
+   - Quality Assurance
+   - Final Review & Delivery
 
 ## Output Structure
 
-Each content run creates a timestamped directory:
+Each content run creates a timestamped directory with:
 
-```text
-content_runs/YYYYMMDD_hhmmss_<short_goal>/
-├── learning_brief.md
-├── research_synthesis.md  
-├── content_plan.md
-├── content_deliverables/
-└── quality_report.md
-```
+- **Transcript files** (append-only logs of agent interactions)
+- **Planning documents** (learning objectives, research, task breakdown)
+- **Final deliverables** (educational content and supporting materials)
+- **Quality reports** (QA documentation and recommendations)
 
-## Getting Started
+## Key Features
 
-1. Ensure all required context files are in place
-2. Choose your content goal type (create, review, or support)
-3. Provide specific, detailed prompts with appropriate triggers
-4. Review generated content and provide feedback for improvements
+- **Specialized agents** for strategy, research, writing, and QA
+- **Pedagogical framework** ensures educational effectiveness
+- **Quality safeguards** prevent infinite revision loops
+- **Flexible workflows** for creation, review, and support materials
+- **Complete audit trail** through append-only transcripts
+
+## Agent Roles
+
+- **ContentDirector** - Strategic vision and final approval
+- **LearningExperienceDesigner** - Learning architecture and progression
+- **PedagogyExpert** - Educational framework compliance
+- **SeniorResearcher** - Research strategy and synthesis
+- **JuniorResearcher** - Data collection and source documentation
+- **SeniorTechnicalWriter** - Content creation and development
+- **JuniorTechnicalWriter** - Content editing and formatting
+- **QualityAssuranceSpecialist** - Quality evaluation and approval
+- **ContentProjectManager** - Task coordination and timeline management
+
+## Loop Prevention
+
+- Maximum 2 revision cycles per content item
+- Deadlock detection after 3 consecutive agent interactions
+- Automatic escalation and scope reduction protocols
+- Session timeout after 10 interactions without progress
